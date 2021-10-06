@@ -1,18 +1,11 @@
-  # {
-  #       'name': 'Cristiano Ronaldo',
-  #       'follower_count': 215,
-  #       'description': 'Footballer',
-  #       'country': 'Portugal'
-  #   },
 from random import randint
 from game_data import data
 # import arts and print game logo
 from art import logo
 print(logo)
-# randomly assign A and B from data, delete A and B from data set
 
 def rand_indx():
-  return randint(0, len(data))
+  return randint(0, len(data)-1)
 
 def assign_person(indx):
   data_item = data[indx]
@@ -48,21 +41,14 @@ def game():
   rand_indx_B = rand_indx()
   A = assign_person(rand_indx_A)
   B = assign_person(rand_indx_B)
-  print(f"Compare A: {A}.")
-  # print(vs)
-  print(f"Against B: {B}.")
   while not game_over:
+    print(f"Compare A: {A}.")
+    # print(vs)
+    print(f"Against B: {B}.")
     guess = input("Who has more followers? Type 'A' or 'B'")
     right_guess(guess, most_followers(rand_indx_A,rand_indx_B))
-
+    A = B
+    rand_indx_A = rand_indx_B
+    rand_indx_B = rand_indx()
+    B = assign_person(rand_indx_B)
 game()
-
-
-
-# Assign A to highest value
-# print "vs" art
-#Who has more followers? if right answer
-  # score ++
-  # print "You're right! Curen score ...."
-# else 
-  # print "Sorry, that's wrong. Final score: ..."
