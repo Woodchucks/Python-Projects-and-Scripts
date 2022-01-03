@@ -32,7 +32,7 @@ for exercise in result["exercises"]:
         "totalWorkout": {
             "date": today,
             "time": time,
-            "exercise": exercise["name"],
+            "exercise": exercise["name"].title(),
             "duration": exercise["duration_min"],
             "calories": exercise["nf_calories"],
         }
