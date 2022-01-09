@@ -83,7 +83,8 @@ for news in get_news():
                     .create(
                          body=str(news),
                          from_="+12626983056",
-                         to="+48 537 520 071"
+#                        change number
+                         to="+48 111 111 111"   
                      )
     print(message.Status)
 
