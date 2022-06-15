@@ -3,8 +3,8 @@ import datetime as dt
 from random import choice
 import smtplib
 
-EMAIL = "pettit.bear3@gmail.com"
-PASSWORD = "P3ttit.b34r"
+EMAIL = os.environ['GMAIL_USER']
+PASSWORD = os.environ['GMAIL_PASSWORD']
 
 birthdays_dict = pd.read_csv("birthdays.csv").to_dict()
 birthday_dataframe = pd.DataFrame.from_dict(birthdays_dict)
